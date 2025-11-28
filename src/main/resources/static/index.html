@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        LISTA DE ENEMIGOS
+    </h1>
+
+    <table id="enemigosTable" style="display:none">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>País</th>
+            <th>Afiliación Política</th>
+        </tr>
+        </thead>
+        <tbody id="enemigosBody">
+
+        </tbody>
+    </table>
+
+    <div class = "formulario-container">
+        <h2>Agregar Nuevo Enemigo</h2>
+        <form id="formInsertarEnemigo">
+
+            <div class="formGroup">
+                <label for="id">ID</label>
+                <input type="number" id="id" name="id" required>
+            </div>
+
+            <div class="formGroup">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <br>
+
+            <div class="formGroup">
+                <label for="pais">Pais</label>
+                <input type="text" id="pais" name="pais" required>
+            </div>
+
+            <br>
+
+            <div class="formGroup">
+                <label for="afiliacion">Afiliación Política</label>
+                <input type="text" id="afiliacion" name="afiliacion" required>
+            </div>
+
+            <button type="submit" id="btnSubmit">
+                Agregar Enemigo
+            </button>
+
+            <button type="button" id="btnEdit">
+                Editar enemigo
+            </button>
+
+            <button type="button" id="btnEliminar">
+                Eliminar enemigo
+            </button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
