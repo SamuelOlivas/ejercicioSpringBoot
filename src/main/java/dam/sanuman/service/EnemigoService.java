@@ -31,7 +31,7 @@ public class EnemigoService {
         return enemigoRepository.save(enemigo);
     } // FIN POST
 
-    public Enemigo editar(Long id, Enemigo enemigo) {
+    public Enemigo editar(String id, Enemigo enemigo) {
         Optional<Enemigo> enemigoExistente = enemigoRepository.findById(id);
 
         if (enemigoExistente.isPresent()) {
@@ -48,7 +48,7 @@ public class EnemigoService {
         }
     } // FIN PUT
 
-    public boolean eliminar(Long id) {
+    public boolean eliminar(String id) {
         Optional<Enemigo> enemigoExistente = enemigoRepository.findById(id);
 
         if (enemigoExistente.isPresent()) {

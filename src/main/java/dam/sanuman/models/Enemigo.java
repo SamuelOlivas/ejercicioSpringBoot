@@ -1,38 +1,34 @@
 package dam.sanuman.models;
-import jakarta.persistence.*;
 
-@Entity
-@Table(name="enemigo_estado")
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.annotation.Id;
+
+@Document(collection = "enemigos")
 public class Enemigo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column
+    private String id;
+    @Indexed(unique = true)
     private String nombre;
-
-    @Column
     private String pais;
-
-    @Column
     private String afiliacion_politica;
 
     public Enemigo() {
 
     }
 
-    public Enemigo(Long id, String nombre, String pais, String afiliacion_politica) {
+    public Enemigo(String id, String nombre, String pais, String afiliacion_politica) {
         this.id = id;
         this.nombre = nombre;
         this.pais = pais;
         this.afiliacion_politica = afiliacion_politica;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -58,5 +54,17 @@ public class Enemigo {
 
     public void setAfiliacion_politica(String afiliacion_politica) {
         this.afiliacion_politica = afiliacion_politica;
+    }
+
+    @Override
+    public String toString() {
+
+        return "Enemigo{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", pais='" + pais + '\'' +
+                ", afiliacion_politica='" + afiliacion_politica + '\'' +
+                '}';
+
     }
 }
